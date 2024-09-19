@@ -1,0 +1,23 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/demandArchiveDocument.css')
+block content
+  main.main
+    .signup-form
+      h2.heading-secondary.ma-bt-lg SEND A CERTIFICAT SCOLAIRE DEMAND
+      form.formCertificatScolaire
+        .form__group
+          label.form__label(for='nom') Nom
+          input#nom.form__input(type='text', placeholder='', required)
+        .form__group
+          label.form__label(for='specialite') Prenom
+          input#prenom.form__input(type='text', placeholder='', required)
+        .form__group
+          label.form__label(for='annee') Specialite
+          input#specialite.form__input(type='text', placeholder='', required)
+        .form__group
+          label.form__label(for='annee') Matricule
+          input#matricule.form__input(type='text', placeholder='', required)
+        .form__group
+          button.btn.btn--green.btn--signupp Send Demand
+    script(src="/js/sendAdministratifDemand.js")

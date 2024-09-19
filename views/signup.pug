@@ -1,0 +1,40 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/signup.css')
+block content
+  main.main
+    .signup-form
+      h2.heading-secondary.ma-bt-lg CREATE AN ACCOUNT
+      form.form2
+        .form__group
+          label.form__label(for='nom') Nom
+          input#nom.form__input(type='text', placeholder='John', required)
+        .form__group
+          label.form__label(for='prenom') Prenom
+          input#prenom.form__input(type='text', placeholder='Wick', required)
+        .form__group
+          label.form__label(for='datedenaissance') Date de Naissance
+          input#datedenaissance.form__input(type='text', placeholder='xx-xx-xxxx', required)
+        .form__group
+          label.form__label(for='email') Email address
+          input#email.form__input(type='email', placeholder='you@example.com', required)
+        .form__group
+          label.form__label(for='numerodetelephone') Numero de Telephone
+          input#numerodetelephone.form__input(type='number', placeholder='xx xx xx xx xx', required)
+        .form__group
+          label.form__label(for='nomdutilisateur') nom d'utiliasteur
+          input#nomdutilisateur.form__input(type='text', placeholder='example1234', required)
+        .form__group
+          label.form__label(for='typedecompte') Who you are? 
+          select#typedecompte.form__input(required)
+            option(value='-') -
+            option(value='enseignant') Enseignant
+            option(value='etudiant') Etudiant
+        .form__group.ma-bt-md
+          label.form__label(for='motdepass') Password
+          input#motdepass.form__input(type='password', placeholder='••••••••', required, minlength='8')
+        .form__group
+          button.btn.btn--green.btn--signupp Sign Up
+      div.lastdivSignup
+        p.lastPInSignup Are you already a member?
+        a.loginInSignup(href='/login') Login

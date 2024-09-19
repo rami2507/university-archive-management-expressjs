@@ -1,0 +1,31 @@
+extends base
+
+block extraHead 
+  link(rel='stylesheet', href='/css/allUsers.css')
+
+block content
+  table
+      if typededocument === 'tp' || typededocument === 'td' || typededocument === 'cour' || typededocument === 'memoire' || typededocument === 'examen'
+        thead
+          th Document
+          th Nom matiere
+          th Actions
+        tbody
+          each archive in archives
+            tr
+              td= archive.typededocument
+              td= archive.document.nommatiere
+              td
+                a(href=`/manage-archives/etude-archives/${archive.typededocument}/${archive._id}`, target="_blank") View Archive
+      else if typededocument === 'diplome' || typededocument === 'certificat-scolaire' || typededocument === 'certificat-de-bon-moralite'
+        thead
+          th Document
+          th Nom
+          th Actions
+        tbody
+          each archive in archives
+            tr
+              td= archive.typededocument
+              td= archive.document.nom
+              td
+                a(href=`/manage-archives/administratif-archives/${archive.typededocument}/${archive._id}`, target="_blank") View Archive

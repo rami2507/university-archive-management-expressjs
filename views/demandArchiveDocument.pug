@@ -1,0 +1,32 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/demandArchiveDocument.css')
+block content
+  main.main
+    .signup-form
+      h2.heading-secondary.ma-bt-lg SEND AN ARCHIVE DEMAND
+      form.archiveDemand
+        .form__group
+          label.form__label(for='typeDeDocument') What type is your document?
+          select#typeDeDocument.form__input(required)
+            option(value='-') -
+            option(value='td') TD
+            option(value='tp') TP
+            option(value='cour') COUR
+            option(value='memoire') MEMOIRE
+            option(value='examen') EXAMEN
+        .form__group
+          label.form__label(for='nommatiere') Nom Matiere
+          input#nommatiere.form__input(type='text', placeholder='Analyse', required)
+        .form__group
+          label.form__label(for='specialite') Specialité
+          input#specialite.form__input(type='text', placeholder='Informatique', required)
+        .form__group
+          label.form__label(for='annee') Annee
+          input#annee.form__input(type='text', placeholder='2011', required)
+        .form__group
+          label.form__label(for='photo') Upload your document
+          input#photo.form__input(type='file', name='photo', required)
+        .form__group
+          button.btn.btn--green.btn--signupp(type="submit") Send Demand
+    script(src="/js/sendArchiveDemand.js")

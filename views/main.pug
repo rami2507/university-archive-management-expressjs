@@ -1,0 +1,90 @@
+include _header
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='/css/main.css')
+  title Archive Inc
+main
+  section.section-hero
+    .hero
+      .hero-text-box
+        h1.heading-primary
+          | Archive your documents with Archive INC
+        p.hero-description
+           dolor sit amet consectetur adipisicing elit. Aliquam, quidem. Nihil sapiente cum illo saepe perferendis optio eligendi harum aliquam magni suscipit porro, libero, quam enim ea maxime laudantium vel!
+        a.btn.btn--full.margin-right-sm(href='/login') Get Started!
+        a.btn.btn--outline(href='#section-cta') Learn more &darr;
+        .delivered-meals
+          .delivered-imgs
+            img(src='mainImages/customers/customer-1.jpg' alt='Customer photo')
+            img(src='mainImages/customers/customer-4.jpg' alt='Customer photo')
+            img(src='mainImages/customers/customer-3.jpg' alt='Customer photo')
+            img(src='mainImages/customers/customer-1.jpg' alt='Customer photo')
+            img(src='mainImages/customers/customer-1.jpg' alt='Customer photo')
+            img(src='mainImages/customers/customer-3.jpg' alt='Customer photo')
+          p.delivered-text
+            span 250,000+
+            |  documents archived !
+      .hero-img-box
+        img.hero-img(src='mainImages/hero.png' alt='Woman enjoying food, meals in storage container, and food bowls on a table')
+  section.section-featured
+    .container
+      h2.heading-featured-in As featured in
+      .logos
+        img(src='mainImages/logos/techcrunch.png' alt='Techcrunch logo')
+        img(src='mainImages/logos/business-insider.png' alt='Business Insider logo')
+        img(src='mainImages/logos/the-new-york-times.png' alt='The New York Times logo')
+        img(src='mainImages/logos/forbes.png' alt='Forbes logo')
+        img(src='mainImages/logos/usa-today.png' alt='USA Today logo')
+  section.section-testimonials
+    .testimonials-container
+      span.subheading Testimonials
+      h2.heading-secondary Once you try it, you can&apos;t go back
+      .testimonials
+        figure.testimonial
+          img.testimonial-img(alt='Photo of customer Dave Bryson' src='img/users/user-6.jpg')
+          blockquote.testimonial-text
+            | This archive web app is a researcher's dream! It's fast, easy to navigate, and has a treasure trove of documents at your fingertips
+          p.testimonial-name &mdash; Dave Bryson
+        figure.testimonial
+          img.testimonial-img(alt='Photo of customer Ben Hadley' src='img/users/user-7.jpg')
+          blockquote.testimonial-text
+            | Efficient, effective, and indispensable. This archive web app has revolutionized the way we manage and access our company's records
+          p.testimonial-name &mdash; Ben Hadley
+        figure.testimonial
+          img.testimonial-img(alt='Photo of customer Steve Miller' src='img/users/user-8.jpg')
+          blockquote.testimonial-text
+            | Finding historical records has never been simpler. This archive web app is a must-have for anyone interested in uncovering the past
+          p.testimonial-name &mdash; Steve Miller
+        figure.testimonial
+          img.testimonial-img(alt='Photo of customer Hannah Smith' src='img/users/user-2.jpg')
+          blockquote.testimonial-text
+            | Incredible tool for journalists! This archive web app makes digging through old articles and reports a breeze
+          p.testimonial-name &mdash; Hannah Smith
+    div
+      img.next-to-testimonials(alt='Photo of customer Hannah Smith' src='mainImages/eating.jpg')
+  section#section-cta(class='section-cta')
+    .container
+      .cta
+        .cta-text-box
+          h2.heading-secondary
+            | If you have any question, please let us know!
+          form.cta-form(action='#')
+            div
+              label(for='full-name') Full Name
+              input#full-name(type='text' placeholder='John Smith' required='')
+            div
+              label(for='email') Email address
+              input#email(type='email' placeholder='me@example.com' required='')
+            div
+              label(for='select-where') Specify your question?
+              textarea#textarea-where(rows='4' required='' placeholder='Please provide details...')
+            button.btn.btn--form Send now
+        img.eating(src='mainImages/eating.jpg')
+    include _footer
+    script(src="/js/logout.js")
+    script(src="http://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")

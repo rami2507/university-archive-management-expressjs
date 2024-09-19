@@ -1,0 +1,11 @@
+extends base
+block extraHead
+  link(rel='stylesheet', href='/css/demandAdministratifDocumentEns.css')
+block content 
+    main.main
+        .sidebar.Etudiant
+            ul
+                li
+                    a(href="/user/demands/send-new-demand/administratif/affectation", target="_blank") AFFECTATION
+                li
+                    a(href="/user/demands/send-new-demand/administratif/echellent", target="_blank") ECHELLENT

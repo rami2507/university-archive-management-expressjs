@@ -1,0 +1,64 @@
+extends base
+
+block extraHead
+  link(rel='stylesheet', href='/css/oneDemande.css')
+
+block content
+  main
+    section.user-details
+      h2 User Details
+      table.user-table
+        tbody
+          tr
+            td.label Nom D'utilisateur:</td>
+            td.user-detail #{demand.utilisateur.nomdutilisateur}</td>
+          tr
+            td.label Role:</td>
+            td.user-detail #{demand.utilisateur.typedecompte}</td>
+      h2 Document Details
+      table.document-table
+        tbody
+          tr
+            td.label Document Type:</td>
+            td.document-detail #{demand.typeDeDocument}</td>
+          if demand.typeDeDocument === 'td' || demand.typeDeDocument === 'tp' || demand.typeDeDocument === 'cour' || demand.typeDeDocument === 'examen'
+            tr
+              td.label Nom:</td>
+              td.document-detail #{demand.document.nommatiere}</td>
+            tr
+              td.label Prenom:</td>
+              td.document-detail #{demand.document.specialite}</td>
+            tr
+              td.label Specialite:</td>
+              td.document-detail #{demand.document.annee}</td>
+            tr
+              td.label Photo:</td>
+              td.document-detail
+                img(src=`/img/documents/${demand.document.photo}`, alt='Photo')
+          if demand.typeDeDocument === 'diplome'
+            tr
+              td.label Nom:</td>
+              td.document-detail #{demand.document.nom}</td>
+            tr
+              td.label Prenom:</td>
+              td.document-detail #{demand.document.prenom}</td>
+            tr
+              td.label Specialite:</td>
+              td.document-detail #{demand.document.specialite}</td>
+          if demand.typeDeDocument === 'certificat-scolaire' || demand.typeDeDocument === 'certificat-de-bon-moralite'
+            tr
+              td.label Nom:</td>
+              td.document-detail #{demand.document.nom}</td>
+            tr
+              td.label Prenom:</td>
+              td.document-detail #{demand.document.prenom}</td>
+            tr
+              td.label Specialite:</td>
+              td.document-detail #{demand.document.specialite}</td>
+            tr
+              td.label Matricule:</td>
+              td.document-detail #{demand.document.matricule}</td>
+      .user-actions
+        button.btn.btn--delete Decline Demand
+        button.btn.btn--accept Accept Demand
+    script(src="/js/deleteAcceptDemand.js")

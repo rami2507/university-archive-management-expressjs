@@ -1,0 +1,11 @@
+extends base
+block extraHead 
+    link(rel='stylesheet', href='/css/manageUsers.css')
+block content
+    main.main
+        .sidebar
+            ul
+                li
+                    a(href="/manage-users/all-users", target="_blank") Manage All Users
+                li
+                    a(href="/manage-users/pending-users", target="_blank") Manage Pending Users

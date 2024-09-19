@@ -1,0 +1,52 @@
+/* Overall table styling */
+table.problem-table {
+  border-collapse: collapse; /* Remove double borders between cells */
+  width: 100%; /* Make the table fill the available width */
+}
+
+/* Table headers */
+table.problem-table thead th {
+  background-color: #eee; /* Light background for headers */
+  padding: 10px; /* Add some padding for readability */
+  text-align: left; /* Left-align content within headers */
+}
+
+/* Table body */
+table.problem-table tbody td {
+  border: 1px solid #ccc; /* Add borders to table cells */
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Action link (View Problem) */
+table.problem-table tbody td a {
+  text-decoration: none; /* Remove underline */
+  color: #fff;
+  background-color: #2e8b57;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 50px; /* Adjust as needed */
+}
+
+.no-results h2 {
+  font-size: 24px;
+  color: #333; /* Adjust color as needed */
+}
+
+.no-results a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2e8b57; /* Adjust button color */
+  color: #fff; /* Adjust button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px; /* Adjust spacing as needed */
+  margin-bottom: 20px;
+}

@@ -1,0 +1,14 @@
+header.header
+  .header__logo
+    img(src="/img/7.png", alt="Archive logo")
+  nav.nav.nav--user
+    if user
+      a.nav__el.nav__el--logout Logout
+      |         
+      a.nav__el(href='#')
+        img.nav__user-img(src=`/img/users/${user.photo}`, alt='User photo')
+        |           
+        span= user.utilisateur.nom
+    else
+      a.nav__el(href="/login", target="_blank") Log in 
+      a.nav__el.nav__el--cta(href='/signup', target="_blank") Signup

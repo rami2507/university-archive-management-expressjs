@@ -1,0 +1,18 @@
+extends base
+block extraHead
+    link(rel='stylesheet', href='/css/etudeArchivesTypes.css')
+block content
+    main.main
+        .sidebar
+            ul
+                li
+                    a(href="/manage-archives/etude-archives/td", target="_blank") TD
+                li
+                    a(href="/manage-archives/etude-archives/tp", target="_blank") TP
+                li
+                    a(href="/manage-archives/etude-archives/cour", target="_blank") COUR
+                li
+                    a(href="/manage-archives/etude-archives/memoire", target="_blank") MEMOIRE
+                li
+                    a(href="/manage-archives/etude-archives/examen", target="_blank") EXAMEN
+

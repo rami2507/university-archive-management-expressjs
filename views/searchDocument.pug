@@ -1,0 +1,28 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/searchDocument.css')
+block content
+  main.main
+    .signup-form
+      h2.heading-secondary.ma-bt-lg SEARCH FOR A DOCUMENT
+      form.formDocumentSearch
+        .form__group
+          label.form__label(for='typedecompte') Document 
+          select#typededocument.form__input(required)
+            option(value='-') -
+            option(value='diplome') Diplome
+            option(value='certificat-scolaire') Certificat Scolaire
+            option(value='certificat-de-bon-moralite') Certificat De Bon Moralite
+        .form__group
+          label.form__label(for='nom') Nom
+          input#nom.form__input(type='text', placeholder='')
+        .form__group
+          label.form__label(for='prenom') Prenom
+          input#prenom.form__input(type='text', placeholder='')
+        .form__group
+          label.form__label(for='matiere') Specialite
+          input#specialite.form__input(type='text', placeholder='')
+        .form__group
+          button.btn.btn--green.btn--search SEARCH
+
+    script(src='/js/searchDocument.js')

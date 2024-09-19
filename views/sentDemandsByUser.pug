@@ -1,0 +1,58 @@
+extends base
+block extraHead 
+    link(rel='stylesheet', href='/css/myProblems.css')
+    link(rel='stylesheet', href='/css/allUsers.css')
+    link(rel='stylesheet', href='/css/sentDemandsByUser.css')
+block content
+    if demands.length > 0
+        if typedecompte === 'enseignant'
+            table
+                thead
+                    tr
+                        th Demand Type
+                        th Document Type
+                        th Document Name
+                        th Annee
+                        th Status
+                        th Document
+                tbody
+                    each demand in demands
+                        tr
+                            td= demand.type
+                            td= demand.typeDeDocument
+                            td= demand.document.nommatiere
+                            td= demand.document.annee
+                            if demand.status === 'Accepted'
+                                td.statusAccepted(class=demand.status)= demand.status
+                                td 
+                                    a(href=`/user/demands/accepted-demands/${demand._id}`, target="_blank") View Document
+                            if demand.status === 'Declined'
+                                td.statusDeclined(class=demand.status)= demand.status
+                            if demand.status === 'Pending'
+                                td.statusPending(class=demand.status)= demand.status
+        else 
+             table
+                thead
+                    tr
+                        th Demand Type
+                        th Document Type
+                        th Status
+                        th Document
+                tbody
+                    each demand in demands
+                        tr
+                            td= demand.type
+                            td= demand.typeDeDocument
+                            if demand.status === 'Declined'
+                                td.status(class=demand.status, style=`color: red;`)= demand.status
+                            if demand.status === 'Pending'
+                                td.status(class=demand.status, style=`color: blue;`)= demand.status
+                            if demand.status === 'Accepted'
+                                td.status(class=demand.status, style=`color: green;`)= demand.status
+                                td
+                                    a(href=`/user/demands/accepted-demands/${demand._id}`, target="_blank") View Document
+    else
+        main
+        section.no-results
+            h2 No Demands Sent Yet!
+            a.btn.btn--primary(href="/user/demands") Back to Demands Page

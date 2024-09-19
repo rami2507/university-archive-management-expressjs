@@ -1,0 +1,55 @@
+extends base
+
+block extraHead
+  link(rel='stylesheet', href='/css/oneDemande.css')
+
+block content
+  main
+    section.user-details
+      h2 User Details
+      table.user-table
+        if archive.typededocument === 'diplome'
+            tbody
+                tr
+                    td.label Full Name:</td>
+                    td.user-detail #{archive.document.nom} #{archive.document.prenom}</td>
+                tr
+                    td.label Specialite:</td>
+                    td.user-detail #{archive.document.specialite}</td>
+                tr
+                    td.label Document:</td>
+                    td.user-detail
+                      img(src=`/img/documents/${archive.document.photo}`)
+        if archive.typededocument === 'certificat-scolaire' || archive.typededocument === 'certificat-de-bon-moralite'
+            tbody
+                tr
+                    td.label Full Name:</td>
+                    td.user-detail #{archive.document.nom} #{archive.document.prenom}</td>
+                tr
+                    td.label Specialite:</td>
+                    td.user-detail #{archive.document.specialite}</td>
+                tr
+                    td.label Matricule :</td>
+                    td.user-detail #{archive.document.matricule}</td>
+                tr
+                    td.label Document:</td>
+                    td.user-detail
+                      img(src=`/img/documents/${archive.document.photo}`)
+        if archive.typededocument === 'tp' || archive.typededocument === 'td' ||  archive.typededocument === 'cour' || archive.typededocument === 'memoire' || archive.typededocument === 'examen'
+            tbody
+                tr
+                    td.label Nom matiere:</td>
+                    td.user-detail #{archive.document.nommatiere}</td>
+                tr
+                    td.label Specialite:</td>
+                    td.user-detail #{archive.document.specialite}</td>
+                tr
+                    td.label Annee:</td>
+                    td.user-detail #{archive.document.specialite}</td>
+                tr
+                    td.label Document:</td>
+                    td.user-detail
+                      img(src=`/img/documents/${archive.document.photo}`)   
+    .user-actions
+        button.btn.btn--delete DELETE ARCHIVE
+  script(src='/js/deleteArchive.js')

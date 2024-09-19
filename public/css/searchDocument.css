@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  /* min-height: 100vh; */
+  background-image: url("/img/img1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 150px;
+}
+
+.btn--signupp {
+  margin-left: 20px;
+}

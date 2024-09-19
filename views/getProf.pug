@@ -1,0 +1,27 @@
+extends base
+
+block extraHead
+    link(rel='stylesheet', href='/css/oneDemande.css')
+
+block content
+    main
+        section.user-details
+            h2 User Details
+            table.user-table
+                tbody
+                    tr
+                        td.label Nom:</td>
+                        td.user-detail #{prof.utilisateur.nom}</td>
+                    tr
+                        td.label Prenom:</td>
+                        td.user-detail #{prof.utilisateur.prenom}</td>
+                    tr
+                        td.label Email Address:</td>
+                        td.user-detail #{prof.utilisateur.email}</td>
+                    tr
+                        td.label Telephone:</td>
+                        td.user-detail #{prof.utilisateur.numerodetelephone}</td>
+                    tr
+                        td.label Photo:</td>
+                        td.user-detail
+                            img(src=`/img/users/${prof.photo}`)

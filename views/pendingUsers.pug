@@ -1,0 +1,26 @@
+extends base
+block extraHead
+    link(rel='stylesheet', href='/css/pendingUsers.css')
+block content
+    if pendingUsers.length === 0
+        main
+            section.no-results
+                h2 No Pending Users Found
+                a.btn.btn--primary(href="/manage-users") Back to User Management
+    else
+        table.pending-users-table
+            thead
+            tr
+                th First Name
+                th Email
+                th Role
+                th Actions
+            tbody
+            each user in pendingUsers
+                tr
+                td= user.utilisateur.nom
+                td= user.utilisateur.email
+                td= user.typedecompte
+                td
+                    a(href=`/manage-users/pending-users/${user.id}`, target="_blank") View User
+

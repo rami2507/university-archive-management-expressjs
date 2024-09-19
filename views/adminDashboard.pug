@@ -1,0 +1,31 @@
+extends base
+block extraHead
+  link(rel='stylesheet', href='/css/adminDashboard.css')
+block content
+  main.main
+    if user && user.typedecompte === 'admin'
+      .sidebar
+        ul
+          li
+            a(href="/manage-users", target="_blank") Manage Users
+          li
+            a(href="/manage-demands", target="_blank") Manage Demands
+          li
+            a(href="/manage-archives", target="_blank") Manage Archives
+          li
+            a(href="/problems", target="_blank") Problems
+      .content
+        h1
+          span= `Hello Admin! Welcome to your dashboard` 
+    else
+      div.login-form
+        h2.heading-secondary.ma-bt-lg ADMIN LOGIN
+        form.adminForm
+          div.form__group
+            label.form__label(for="nomdutilisateur") Nom D'utilisateur
+            input#nomdutilisateur.form__input(type="text", placeholder="john1234", required)
+          div.form__group.ma-bt-md
+            label.form__label(for="motdepass") Mot de Pass
+            input#motdepass.form__input(type="password", placeholder="••••••••", required, minlength="8")
+          div.form__group.lst--grp
+            button.btn.btn--green.login--btn Login

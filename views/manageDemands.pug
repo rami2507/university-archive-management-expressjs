@@ -1,0 +1,11 @@
+extends base
+block extraHead
+    link(rel='stylesheet', href='/css/manageDemandes.css')
+block content
+    main.main
+        .sidebar
+            ul
+                li
+                    a(href="/manage-demands/archive", target="_blank") Archive Demands
+                li
+                    a(href="/manage-demands/administratif", target="_blank") Administratif Demands

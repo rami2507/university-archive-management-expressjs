@@ -1,0 +1,17 @@
+extends base
+block extraHead
+    link(rel='stylesheet', href='/css/reportProblem.css')
+block content
+  main.main
+    .reportproblem-form
+      h2.heading-secondary.ma-bt-lg REPORT A PROBLEM
+      form.form3
+        .form__group
+          label.form__label(for='problemname') Problem Type
+          input#problemtype.form__input(type='text', placeholder='Enter problem type', name='problemname', required)
+        .form__group
+          label.form__label(for='message') Message
+          textarea#message.form__input(type='text', placeholder='Enter your message', name='message', required)
+        .form__group
+          button.btn.btn--green.btn--signupp.btn--send(type='submit') Send
+    script(src="/js/reportProblem.js")

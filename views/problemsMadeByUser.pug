@@ -1,0 +1,24 @@
+extends base
+block extraHead 
+    link(rel='stylesheet', href='/css/myProblems.css')
+block content
+    if userProblems.length > 0
+        table
+            thead
+                tr
+                    th Problem Type
+                    th Date
+                    th Status
+            tbody
+                each userProblem in userProblems
+                    tr
+                        td= userProblem.type
+                        td= userProblem.date
+                        if  userProblem.status === 'Unresolved'
+                            td.statusUnresolved(class=userProblem.status)= userProblem.status
+                        if  userProblem.status === 'Resolved'
+                            td.statusAccepted(class=userProblem.status)= userProblem.status
+                        if  userProblem.status === 'Pending'
+                            td.statusPending(class=userProblem.status)= userProblem.status
+    else
+        p No problems reported by the user.

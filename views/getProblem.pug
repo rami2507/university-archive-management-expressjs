@@ -1,0 +1,31 @@
+extends base
+
+block extraHead
+  link(rel='stylesheet', href='/css/oneDemande.css')
+
+block content
+  main
+    section.user-details
+      h2 User Details
+      table.user-table
+        tbody
+          tr
+            td.label Full Name:</td>
+            td.user-detail #{problem.utilisateur.nom} #{problem.utilisateur.prenom}</td>
+          tr
+            td.label Email:</td>
+            td.user-detail #{problem.utilisateur.email}</td>
+          tr
+            td.label Date:</td>
+            td.user-detail #{problem.date}</td>
+          tr
+            td.label Type:</td>
+            td.user-detail #{problem.type}</td>
+          tr
+            td.label Message:</td>
+            td.user-detail #{problem.message}</td>
+      .user-actions
+          button.btn.btn--delete Unresolve
+          button.btn.btn--accept Resolve
+      script(src="/js/resolveUnresolveProblem.js")
+

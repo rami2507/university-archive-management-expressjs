@@ -1,0 +1,28 @@
+extends base
+
+block extraHead
+  link(rel='stylesheet', href='/css/oneDemande.css')
+
+block content
+  main
+    section.user-details
+      h2 User Details
+      table.user-table
+        tbody
+          tr
+            td.label Full Name:</td>
+            td.user-detail #{user.utilisateur.nom} #{user.utilisateur.prenom}</td>
+          tr
+            td.label Email:</td>
+            td.user-detail #{user.utilisateur.email}</td>
+          tr
+            td.label Role:</td>
+            td.user-detail #{user.typedecompte}</td>
+      .user-actions
+        if typeOfList === 'pending-users'
+          button.btn.btn--delete DELETE USER
+          button.btn.btn--accept ACCEPT USER
+        else 
+          button.btn.btn--delete DELETE USER
+      script(src="/js/deleteAcceptUser.js")
+

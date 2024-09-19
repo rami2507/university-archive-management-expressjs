@@ -1,0 +1,61 @@
+.user-details {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-table,
+.document-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-table td,
+.document-table td {
+  padding: 12px; /* Increased padding for better spacing */
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; /* Increased font size for better readability */
+  line-height: 1.6; /* Increased line height for better vertical rhythm */
+}
+
+.user-table .label,
+.document-table .label {
+  font-weight: bold;
+}
+
+.user-actions {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 24px; /* Increased padding for better button size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn--delete {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn--accept {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+h2 {
+  color: #28b487;
+}

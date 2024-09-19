@@ -1,0 +1,25 @@
+extends base
+block extraHead
+  link(rel='stylesheet', href='/css/allProblems.css')
+block content
+  if problems.length > 0
+    table.problem-table
+      thead
+        tr
+          th Email Address
+          th Date
+          th Actions
+      tbody
+        each problem in problems
+          tr
+            td= problem.utilisateur.email
+            td= problem.date
+            td
+              a(href=`/problems/${problem._id}`, target="_blank") View Problem
+  else 
+    main
+    section.no-results
+      h2 No Problems At The Moment!
+      a.btn.btn--primary(href="/adminDashboard") Back to Admin Dashboard
+
+

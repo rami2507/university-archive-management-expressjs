@@ -1,0 +1,22 @@
+extends base
+block extraHead
+    link(rel='stylesheet', href='/css/sendDemandByUser.css')
+block content
+    if typedecompte === 'enseignant'
+        main.main
+            .sidebar.Enseignant
+                ul
+                    li
+                        a(href="/user/demands/send-new-demand/archive", target="_blank") Archive Demand
+                    li
+                        a(href="/user/demands/send-new-demand/administratif", target="_blank") Administratif Demand
+    else
+        main.main
+            .sidebar.Etudiant
+                ul
+                    li
+                        a(href="/user/demands/send-new-demand/administratif/diplome", target="_blank") Diplome
+                    li
+                        a(href="/user/demands/send-new-demand/administratif/certificat-scolaire", target="_blank") Certificat Scolaire
+                    li
+                        a(href="/user/demands/send-new-demand/administratif/certificat-de-bon-moralite", target="_blank") Cert De Bon Moralite

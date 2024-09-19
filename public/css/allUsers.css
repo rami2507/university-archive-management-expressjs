@@ -1,0 +1,85 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px; /* Adjust the radius value as needed */
+  overflow: hidden;
+  box-shadow: 0px 10px 50px 1px rgba(0.1, 0.1, 0.1, 0.2);
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+td.statusUnresolved {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+}
+td.statusAccepted {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+}
+td.statusPending {
+  color: blue;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* Overall table styling */
+table {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 1100px;
+  margin-left: 180px;
+}
+
+/* Table headers */
+table thead th {
+  background-color: #eee; /* Light background for headers */
+  padding: 10px; /* Add some padding for readability */
+  text-align: left; /* Left-align content within headers */
+}
+
+/* Table body */
+table tbody td {
+  border: 1px solid #ccc; /* Add borders to table cells */
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Action link (View Problem) */
+table tbody td a {
+  text-decoration: none; /* Remove underline */
+  color: #fff;
+  background-color: #2e8b57;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

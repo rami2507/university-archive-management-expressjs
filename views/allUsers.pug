@@ -1,0 +1,18 @@
+extends base
+block extraHead 
+    link(rel='stylesheet', href='/css/allUsers.css')
+block content
+  table
+    thead
+      th First Name
+      th Email
+      th Role
+      th Actions
+    tbody
+      each user in users
+        tr
+          td= user.utilisateur.nom
+          td= user.utilisateur.email
+          td= user.typedecompte
+          td
+            a(href=`/manage-users/all-users/${user.id}`, target="_blank") View User

@@ -1,0 +1,36 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/login.css')
+block content
+  main.main
+    if user 
+      .sidebar
+        ul
+          if typedecompte === 'enseignant'
+            li
+              a(href="/user/demands", target="_blank") Demands
+          else 
+            li
+              a(href="/user/demands", target="_blank") Demands
+          li
+            a(href="/problems-page", target="_blank") Report a problem
+      .content
+        h1
+          span= `Hello ${user.utilisateur.nom}! Welcome to your dashboard.`
+    else
+      div.login-form
+        h2.heading-secondary.ma-bt-lg Log into your account
+        form.form
+          div.form__group
+            label.form__label(for="nomdutilisateur") Nom D'utilisateur
+            input#nomdutilisateur.form__input(type="text", placeholder="john1234", required)
+          div.form__group.ma-bt-md
+            label.form__label(for="motdepass") Password
+            input#motdepass.form__input(type="password", placeholder="••••••••", required, minlength="8")
+          div.form__group.lst--grp
+            button.btn.btn--green.login--btn Login
+          div.last--div
+            p Forgot your password? 
+              a(href="/forgotpassword") Reset Now
+            p Don't have an account yet? 
+              a(href="/signup") Join Now

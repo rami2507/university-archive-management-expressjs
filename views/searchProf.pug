@@ -1,0 +1,15 @@
+extends base
+block extraHead 
+  link(rel='stylesheet', href='/css/searchDocument.css')
+block content
+  main.main
+    .signup-form
+      h2.heading-secondary.ma-bt-lg SEARCH FOR A PROF
+      form.formDocumentSearch
+        .form__group
+          label.form__label(for='nom') Nom
+          input#profName.form__input(type='text', placeholder='')
+        .form__group
+          button.btn.btn--green.btn--search SEARCH
+
+    script(src='/js/searchProf.js')

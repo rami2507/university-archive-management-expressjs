@@ -1,0 +1,23 @@
+extends base
+block extraHead 
+    link(rel='stylesheet', href='/css/archiveDemandes.css')
+
+block content
+    if administratifDemands.length === 0
+        main
+        section.no-results
+            h2 No Administratif Demands At The Moment
+            a.btn.btn--primary(href="/manage-demands") Back to Demand Management
+    else  
+        table
+            thead
+                th Nom D'utilisateur
+                th Role
+                th Actions
+            tbody
+            each demand in administratifDemands
+                tr
+                td= demand.utilisateur.nomdutilisateur
+                td= demand.utilisateur.typedecompte
+                td
+                    a(href=`/manage-demands/administratif/${demand._id}`, target="_blank") View Demand
